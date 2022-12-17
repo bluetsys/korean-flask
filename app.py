@@ -1,15 +1,11 @@
 # save this as app.py
 from flask import Flask
-from konlpy.tag import Kkma, Komoran, Okt, Mecab
+import mecab
+mecab = mecab.MeCab()
 
 app = Flask(__name__)
 
 app.config['JSON_AS_ASCII'] = False
-
-mec = Mecab()
-okt = Okt()
-kkm = Kkma()
-kom = Komoran()
 
 @app.route("/")
 def hello():
@@ -20,7 +16,7 @@ def hello():
     #print(kkm.pos(txt,flatten=False, join=True)) #kkma
     #print(okt.pos(txt,norm=True, stem=True, join=True)) #okt
 
-    return mec.pos(txt, flatten=False, join=True)
+    return mecab.pos(txt)
 
 @app.route('/user/<user_name>/<int:user_id>')
 def user1(user_name, user_id):
