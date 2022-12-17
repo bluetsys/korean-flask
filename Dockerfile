@@ -1,9 +1,5 @@
+FROM openjdk-11-jdk
 FROM python
-
-RUN apt update -y -qq
-RUN apt upgrade -y -qq
-
-RUN apt install -y openjdk-11-jdk
 
 RUN pip3 install konlpy
 RUN git clone https://github.com/SOMJANG/Mecab-ko-for-Google-Colab.git
@@ -16,5 +12,3 @@ RUN git clone https://github.com/bluetsys/korean-flask.git
 WORKDIR /korean-flask
 
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
-#CMD ["ls", '-l"]
-#CMD ["flask", 'run"]
