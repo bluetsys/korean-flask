@@ -1,4 +1,4 @@
-FROM openjdk-11-jdk
+FROM openjdk:21-jdk
 FROM python
 
 RUN pip3 install konlpy
