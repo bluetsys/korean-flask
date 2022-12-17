@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+Mecab-ko-for-Google-Colab/
 *.py[cod]
 *$py.class
 
