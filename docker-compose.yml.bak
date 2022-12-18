@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  nginx:
+    image: wymoon2690/nginx
+    build: ./nginx
+    container_name: core-app.local
+    ports:
+      - "1080:80"
+      - "1443:443"
+    depends_on:
+      - core-app
+    networks:
+      - backend
+
+  core-app:
+    image: wymoon2690/www
+    build: ./app
+    networks:
+      - backend
+
+networks:
+  backend:
