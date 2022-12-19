@@ -1,0 +1,1 @@
+docker run -d -p 8001:80 --name korean-fastapi wymoon2690/korean-fastapi
