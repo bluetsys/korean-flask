@@ -1,7 +1,7 @@
 FROM wymoon2690/python-mecab-ko
 
 WORKDIR /app
-COPY . /app
+COPY . ./
 
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
