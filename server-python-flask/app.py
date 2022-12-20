@@ -11,7 +11,7 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route("/")
 def hello():
-    return platform.node()
+    return 'Hello World'
 
 @app.route("/health")
 def health():

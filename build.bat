@@ -9,3 +9,6 @@ docker push wymoon2690/python-fastapi
 
 docker build -t wymoon2690/python-flask ./server-python-flask/.
 docker push wymoon2690/python-flask
+
+docker build -t wymoon2690/node-express ./server-node-express/.
+docker push wymoon2690/node-express
