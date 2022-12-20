@@ -17,7 +17,7 @@ const PORT = process.argv[3];
 console.log(`Running on http://${HOST}:${PORT}`);
 
 http.createServer((req, res) => {
-  console.log(req.url)
+  // console.log(req.url)
   if( req.url ==='/')
   {
     res.statusCode = 200;

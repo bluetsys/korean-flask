@@ -5,5 +5,5 @@ COPY . /app
 
 RUN npm install
 
-EXPOSE 8015
-ENTRYPOINT ["node", "app.js", "0.0.0.0", "8015"]
+EXPOSE 80
+ENTRYPOINT ["node", "app.js", "0.0.0.0", "80"]

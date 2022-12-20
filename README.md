@@ -44,3 +44,18 @@ docker run -d -p 800:80 --name korean-flask wymoon2690/korean-flask:fastapi
 
 docker build --tag fastapi:0.1 .
 docker run --rm -p 8080:80 fastapi:0.1
+
+dotnet publish -c Release
+'''
+dotnet run --urls=http://183.98.188.155:8011/
+node .\app.js 0.0.0.0 8016
+python3 -m uvicorn app:app --host=0.0.0.0 --port=8013
+python3 app.py runserver 0.0.0.0:8012
+python3 -m flask run --host=0.0.0.0 --port=8014
+'''
+.\mvnw spring-boot:run
+.\mvnw docker:build
+.\mvnw package
+
+docker build -t wymoon2690/server-java-spring .
+docker run -d -p 8080:8080 wymoon2690/server-java-spring

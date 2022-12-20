@@ -12,3 +12,6 @@ docker push wymoon2690/python-flask
 
 docker build -t wymoon2690/node-express ./server-node-express/.
 docker push wymoon2690/node-express
+
+docker build -t wymoon2690/node-http ./server-node-http/.
+docker push wymoon2690/node-http

@@ -15,6 +15,19 @@ settings.configure(
 	ROOT_URLCONF=__name__,
 )
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': [],
+        'level': 'CRITICAL',
+    },
+}
 
 def home(request):
 	return HttpResponse("Hello World")
