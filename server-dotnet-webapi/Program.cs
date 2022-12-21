@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
-
 var app = WebApplication.Create(args);
 
 app.MapGet("/", (Func<string>)(() => "Hello World"));
