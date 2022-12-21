@@ -12,3 +12,15 @@ app.Run();
 docker build -t wymoon2690/dotnet-webapi .
 docker push wymoon2690/dotnet-webapi
 ```
+
+> docker build
+``` shell
+docker build -t dotnet-webapi ./server-dotnet-webapi/.
+```
+
+> docker run
+``` bash
+docker run -d -p 8010 -name dotnet-webapi dotnet-webapi
+```
+
+---------------------------------------
