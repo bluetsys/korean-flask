@@ -3,13 +3,14 @@ import mecab
 import zlib
 
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 
 mecab = mecab.MeCab()
 app = FastAPI()
 
 @app.get("/")
 def read_root():
+    #return Response(content='Hello World')
     return 'Hello World'
 
 @app.get("/health")
