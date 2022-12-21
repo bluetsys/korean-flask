@@ -13,14 +13,13 @@ dotnet run --project .\server-dotnet-webapi\. --urls=http://*:8010/
 ```
 
 > docker build
-``` bat
+``` shell
 docker build -t dotnet-webapi ./server-dotnet-webapi/.
 ```
 
 > docker run
-``` bat
+``` bash
 docker run -d -p 8011:80 -name dotnet-webapi dotnet-webapi
 ```
 
 ---------------------------------------
-

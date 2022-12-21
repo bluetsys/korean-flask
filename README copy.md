@@ -47,7 +47,7 @@ docker run --rm -p 8080:80 fastapi:0.1
 
 dotnet publish -c Release
 '''
-dotnet run --urls=http://183.98.188.155:8011/
+dotnet run  
 node .\app.js 0.0.0.0 8016
 python3 -m uvicorn app:app --host=0.0.0.0 --port=8013
 python3 app.py runserver 0.0.0.0:8012
