@@ -22,7 +22,7 @@ def read_health():
         },
         "web":
         {
-            "name": 'flask',
+            "name": 'fastapi',
             "version": fastapi.__version__,
         },
     }

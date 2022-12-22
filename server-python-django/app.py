@@ -1,9 +1,11 @@
 import platform
 import sys
+import django
 
 from django.conf import settings
 from django.urls import path
 from django.http import HttpResponse
+from django.http import JsonResponse
 
 settings.configure(
 	DEBUG=True,  # For debugging
@@ -16,7 +18,22 @@ def home(request):
 	return HttpResponse("Hello World")
 
 def health(request):
-	return HttpResponse(platform.node())
+
+	data = {
+        "hostname":  platform.node(),
+        "language":
+        {
+            "name": 'python',
+            "version": platform.python_version(),
+        },
+        "web":
+        {
+            "name": 'django',
+            "version": django.__version__,
+        },
+    }
+
+	return JsonResponse(data)
 
 urlpatterns = [
 	path("", home),
