@@ -12,15 +12,12 @@ app.Run();
 dotnet run --project .\server-dotnet-webapi\. --urls=http://*:8010/
 ```
 
-> docker build
 ``` bat
 docker build -t dotnet-webapi ./server-dotnet-webapi/.
 ```
 
-> docker run
 ``` bat
 docker run -d -p 8011:80 -name dotnet-webapi dotnet-webapi
 ```
 
 ---------------------------------------
-
