@@ -54,8 +54,19 @@ python3 app.py runserver 0.0.0.0:8012
 python3 -m flask run --host=0.0.0.0 --port=8014
 '''
 .\mvnw spring-boot:run
-.\mvnw docker:build
 .\mvnw package
+.\mvnw docker:build
 
 docker build -t wymoon2690/server-java-spring .
 docker run -d -p 8080:8080 wymoon2690/server-java-spring
+
+
+
+python3 -m pip install django fastapi uvicorn Flask
+
+===========================================================
+dotnet run -c Release --project .\server-dotnet-webapi\. --urls=http://*:8100/
+python3 app.py runserver 0.0.0.0:8211
+python3 -m uvicorn app:app --host=0.0.0.0 --port=8221
+python3 -m flask run --host=0.0.0.0 --port=8231
+.\mvnw spring-boot:run

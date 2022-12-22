@@ -1,7 +1,16 @@
 import platform
 import sys
 
+from django.conf import settings
+from django.urls import path
 from django.http import HttpResponse
+
+settings.configure(
+	DEBUG=True,  # For debugging
+	#SECRET_KEY="a-bad-secret",  # Insecure! change this
+	ROOT_URLCONF=__name__,
+)
+
 
 def home(request):
 	return HttpResponse("Hello World")

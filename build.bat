@@ -15,3 +15,6 @@ docker push wymoon2690/node-express
 
 docker build -t wymoon2690/node-http ./server-node-http/.
 docker push wymoon2690/node-http
+
+docker build -t wymoon2690/java-spring ./server-java-spring/.
+docker push wymoon2690/java-spring
