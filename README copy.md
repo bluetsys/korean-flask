@@ -70,3 +70,5 @@ python3 app.py runserver 0.0.0.0:8211
 python3 -m uvicorn app:app --host=0.0.0.0 --port=8221
 python3 -m flask run --host=0.0.0.0 --port=8231
 .\mvnw spring-boot:run
+node .\app.js 0.0.0.0 8510
+node .\app.js 0.0.0.0 8520

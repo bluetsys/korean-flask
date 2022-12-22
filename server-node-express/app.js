@@ -1,5 +1,8 @@
-const express = require("express");
 const os = require("os");
+const express = require("express");
+
+const HOST = process.argv[2];
+const PORT = process.argv[3];
 
 const app = express();
 
@@ -8,11 +11,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-    res.send(os.hostname());
-});
+    var data = {
+        hostname: os.hostname(),
+        language: {
+            name: 'node',
+            version: process.version
+        },
+        web: {
+            name: 'express',
+            version: require('./node_modules/express/package.json').version 
+        }
+    }
 
-const HOST = process.argv[2];
-const PORT = process.argv[3];
+    res.send(data);
+});
 
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
