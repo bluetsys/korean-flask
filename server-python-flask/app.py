@@ -1,4 +1,5 @@
 import platform
+import flask
 
 from flask import Flask, request
 
@@ -10,4 +11,18 @@ def hello():
 
 @app.route("/health")
 def health():
-    return platform.node()
+    data = {
+        "hostname":  platform.node(),
+        "language":
+        {
+            "name": 'python',
+            "version": platform.python_version(),
+        },
+        "web":
+        {
+            "name": 'flask',
+            "version": flask.__version__,
+        },
+    }
+
+    return data

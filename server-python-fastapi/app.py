@@ -1,4 +1,5 @@
 import platform
+import fastapi
 
 from typing import Union
 from fastapi import FastAPI, Response, Request
@@ -12,4 +13,17 @@ def read_root():
 
 @app.get("/health")
 def read_health():
-    return platform.node()
+    data = {
+        "hostname":  platform.node(),
+        "language":
+        {
+            "name": 'python',
+            "version": platform.python_version(),
+        },
+        "web":
+        {
+            "name": 'flask',
+            "version": fastapi.__version__,
+        },
+    }
+    return data
