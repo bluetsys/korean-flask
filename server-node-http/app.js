@@ -11,8 +11,6 @@ console.log(`Running on http://${HOST}:${PORT}`);
 http.createServer((req, res) => {
   // console.log(req.url)
   if (req.url === '/') {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World');
   } else if (req.url === '/health') {
     var data = {
@@ -26,8 +24,6 @@ http.createServer((req, res) => {
         version: process.version
       }
     }
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
     res.end(JSON.stringify(data));
   }
 }).listen(PORT);

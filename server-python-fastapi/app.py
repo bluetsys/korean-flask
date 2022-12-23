@@ -9,7 +9,6 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return Response(content='Hello World')
-    #return 'Hello World'
 
 @app.get("/health")
 def read_health():

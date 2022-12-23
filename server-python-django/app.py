@@ -13,7 +13,6 @@ settings.configure(
 	ROOT_URLCONF=__name__,
 )
 
-
 def home(request):
 	return HttpResponse("Hello World")
 
