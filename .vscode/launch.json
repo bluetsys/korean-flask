@@ -2,33 +2,25 @@
     "version": "0.2.0",
     "configurations": [
         // {
-        //     "name": "Python: Flask",
-        //     "type": "python",
+        //     "name": "PowerShell Launch Script",
+        //     "type": "PowerShell",
         //     "request": "launch",
-        //     "module": "flask",
-        //     "env": {
-        //         "FLASK_APP": "app.py",
-        //         "FLASK_DEBUG": "1"
-        //     },
-        //     "args": [
-        //         "run",
-        //         "--no-debugger",
-        //         "--no-reload"
-        //     ],
-        //     "jinja": true,
-        //     "justMyCode": true
+        //     "script": "enter path or command to execute e.g.: ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
+        //     "cwd": "${cwd}"
         // },
-        // {
-        //     "name": "Python: FastAPI",
-        //     "type": "python",
-        //     "request": "launch",
-        //     "module": "uvicorn",
-        //     "args": [
-        //         "app:app"
-        //     ],
-        //     "jinja": true,
-        //     "justMyCode": true
-        // },
+        {
+            "name": "8111 dotnet webapi",
+            "type": "coreclr",
+            "request": "launch",
+            // "preLaunchTask": "build",
+            "program": "${workspaceFolder}/server-dotnet-webapi/bin/Release/net7.0/dotnet-webapi.dll",
+            "args": [
+                "--Logging:LogLevel:Microsoft=Warning",
+                "--urls=http://*:8111/"
+            ],
+            "cwd": "${workspaceFolder}/server-dotnet-webapi",
+            "console": "internalConsole",
+        },
         {
             "name": "8211 python django",
             "program": "${workspaceFolder}/server-python-django/app.py",
@@ -41,26 +33,30 @@
         },
         {
             "name": "8221 python fastapi",
-            "program": "${workspaceFolder}/server-python-fastapi/app.py",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
             "args": [
+                "--app-dir=server-python-fastapi",
                 "app:app",
+                "--reload",
                 "--host=0.0.0.0",
                 "--port=8221",
             ],
         },
         {
             "name": "8231 python flask",
-            "program": "${workspaceFolder}/server-python-flask/app.py",
             "type": "python",
             "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "${workspaceFolder}/server-python-flask/app.py",
+                "FLASK_DEBUG": "1"
+            },
             "args": [
-                "-m",
-                "app:app",
+                "run",
                 "--host=0.0.0.0",
-                "--port=8221",
+                "--port=8231",
             ],
         },
         {

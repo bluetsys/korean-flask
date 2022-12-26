@@ -67,11 +67,19 @@ python3 -m pip install django fastapi uvicorn Flask
 ===========================================================
 dotnet run -c Release --project .\server-dotnet-webapi\. --urls=http://*:8111/
 
-python3 app.py runserver 0.0.0.0:8211
-python3 -m uvicorn app:app --host=0.0.0.0 --port=8221
-python3 -m flask run --host=0.0.0.0 --port=8231
+python app.py runserver 0.0.0.0:8211
+python -m uvicorn app:app --host=0.0.0.0 --port=8221
+python -m flask run --host=0.0.0.0 --port=8231
+python -m uvicorn app:app --host=0.0.0.0 --port=8241
+
+
+
 
 .\mvnw spring-boot:run
 
+express
 node .\app.js 0.0.0.0 8311
+
+http
 node .\app.js 0.0.0.0 8321
+
